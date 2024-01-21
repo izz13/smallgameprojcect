@@ -8,15 +8,19 @@ public class Mover : MonoBehaviour
     public float horizontal, vertical;
     public float speed = 5f;
     public bool moving = false;
+    Vector3 startPosition = Vector3.zero;
 
     // Start is called before the first frame update
-    void Start()
+    public void PlayerStart()
     {
+        Vector3 position = transform.position;
+        position = startPosition;
+        transform.position = position;
         rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
-    void Update()
+    public void PlayerUpdate()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
