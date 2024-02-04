@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -303,12 +304,27 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 508dac10107404427af961c765dd5fce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1953116616}
+  distance: 15
+  height: 15
 --- !u!114 &1083261505 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7001024196736084142, guid: baec5acc7215a4502b4bb70c12bdd1b9, type: 3}
@@ -365,6 +381,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1953116616 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4969121656880843673, guid: baec5acc7215a4502b4bb70c12bdd1b9, type: 3}
+  m_PrefabInstance: {fileID: 3453074575734193704}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2292042656651354325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -473,6 +494,10 @@ PrefabInstance:
     - target: {fileID: 6309192317448745460, guid: baec5acc7215a4502b4bb70c12bdd1b9, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7001024196736084142, guid: baec5acc7215a4502b4bb70c12bdd1b9, type: 3}
+      propertyPath: speed
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

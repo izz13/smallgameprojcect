@@ -9,22 +9,20 @@ public class Mover : MonoBehaviour
     public float speed = 5f;
     public bool moving = false;
     Vector3 startPosition = Vector3.zero;
+    public Vector3 direction;
+    public Vector3 velocity;
 
-    // Start is called before the first frame update
     public void PlayerStart()
     {
-        Vector3 position = transform.position;
-        position = startPosition;
-        transform.position = position;
+        transform.position = startPosition;
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     public void PlayerUpdate()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
-        Vector3 direction = new Vector3(horizontal, 0f, vertical);
+        direction = new Vector3(horizontal, 0f, vertical);
         Move(direction);
     }
 
@@ -32,14 +30,14 @@ public class Mover : MonoBehaviour
     {
         if (direction != Vector3.zero)
         {
-            direction.Normalize();
+            direction = direction.normalized;
             moving = true;
         }
         else
         {
             moving = false;
         }
-        direction.y = rb.velocity.y;
-        rb.velocity = direction * speed;
+        velocity = new Vector3(direction.x * speed, rb.velocity.y, direction.z * speed);
+        rb.velocity = velocity;
     }
 }
