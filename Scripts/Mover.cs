@@ -31,6 +31,17 @@ public class Mover : MonoBehaviour
         // Move(direction); // then call move function by giving direction as parameter (which makes movement to the object according to the value in the direction variable)
         desiredJump |= Input.GetButtonDown("Jump");
     }
+    public bool Reset()
+    {
+        if (this.transform.position.y < -10)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
     public void Move() //method which move the object
     {
@@ -50,10 +61,18 @@ public class Mover : MonoBehaviour
         }
         velocity = new Vector3(direction.x * horizontalSpeed, rb.velocity.y, direction.z * verticalSpeed); // calculate the velocity according to the value in the direction variable
         rb.velocity = velocity; // update the rigid body velocity to the value in the velocity variable
+        onGround = false;
     }
     void Jump()
     {
-        float jumpVelocity = Mathf.Sqrt(-2f * Physics.gravity.y * jumpHeight);
-        rb.velocity += Vector3.up * jumpHeight;
+        if (onGround)
+        {
+            float jumpVelocity = Mathf.Sqrt(-2f * Physics.gravity.y * jumpHeight);
+            rb.velocity += Vector3.up * jumpHeight;
+        }
+    }
+    void OnCollisionStay()
+    {
+        onGround = true;
     }
 }

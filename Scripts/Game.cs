@@ -16,6 +16,10 @@ public class Game : MonoBehaviour
     void Update()
     {
         player.PlayerUpdate();
+        if (player.Reset())
+        {
+            player.PlayerStart();
+        }
     }
     private void FixedUpdate()
     {
