@@ -73,6 +73,32 @@ public class Mover : MonoBehaviour
     }
     void OnCollisionStay()
     {
-        onGround = true;
+        //onGround = true;
+        if (CheckGround())
+        {
+            onGround = true;
+        }
+    }
+    bool CheckGround()
+    {
+        GameObject target;
+        Ray ray = new Ray(this.transform.position, this.transform.up * -1);
+        if(Physics.Raycast(ray, out RaycastHit rayhit))
+        {
+            target = rayhit.collider.gameObject;
+            float normalAlignment = Vector3.Dot(rayhit.normal, Vector3.up);
+            if (normalAlignment < 1.5f && normalAlignment > .95f)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
     }
 }
