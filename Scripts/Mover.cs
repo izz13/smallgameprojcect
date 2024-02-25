@@ -15,6 +15,7 @@ public class Mover : MonoBehaviour
     public Vector3 velocity; //declare variable stores x, y, z vector values of velocity
     bool desiredJump; // declare variable that tracks whether the body wants to jump or not in the boolean data type
     bool onGround; // declare variable that tracks whether the body is on the ground or not in boolean data type.
+    public bool playerReset;
 
     public void PlayerStart() // method which operates when the game starts
     {
@@ -30,16 +31,14 @@ public class Mover : MonoBehaviour
         direction = new Vector3(horizontal, 0f, vertical); // set the direction of the body according to the value stored in horizontal and vertical variable
         // Move(direction); // then call move function by giving direction as parameter (which makes movement to the object according to the value in the direction variable)
         desiredJump |= Input.GetButtonDown("Jump");
+        offMap();
     }
-    public bool Reset()
+
+    void offMap()
     {
         if (this.transform.position.y < -10)
         {
-            return true;
-        }
-        else
-        {
-            return false;
+            playerReset = true;
         }
     }
 
@@ -73,11 +72,11 @@ public class Mover : MonoBehaviour
     }
     void OnCollisionStay()
     {
-        //onGround = true;
-        if (CheckGround())
-        {
-            onGround = true;
-        }
+        onGround = true;
+        //if (CheckGround())
+        //{
+        //    onGround = true;
+        //}
     }
     bool CheckGround()
     {
