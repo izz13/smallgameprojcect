@@ -70,13 +70,29 @@ public class Mover : MonoBehaviour
             rb.velocity += Vector3.up * jumpHeight;
         }
     }
-    void OnCollisionStay()
+    void OnCollisionStay(Collision collision)
     {
-        onGround = true;
-        //if (CheckGround())
-        //{
-        //    onGround = true;
-        //}
+        EvaluateCollision(collision);
+       
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        EvaluateCollision(collision);
+    }
+    void EvaluateCollision(Collision collision)
+    {
+        for(int i = 0; i < collision.contactCount; i++)
+        {
+            Vector3 normal = collision.GetContact(i).normal;
+            if(normal.y >= 0.9f)
+            {
+                onGround = true;
+            }
+            else
+            {
+                playerReset = true;
+            }
+        }
     }
     bool CheckGround()
     {
