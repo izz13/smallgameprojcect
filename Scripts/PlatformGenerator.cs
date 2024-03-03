@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class PlatformGenerator : MonoBehaviour
 {
-
+    private void OnTriggerEnter(Collider other)
+    {
+        
+    }
 }

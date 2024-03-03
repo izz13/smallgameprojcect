@@ -16,6 +16,7 @@ public class Mover : MonoBehaviour
     bool desiredJump; // declare variable that tracks whether the body wants to jump or not in the boolean data type
     bool onGround; // declare variable that tracks whether the body is on the ground or not in boolean data type.
     public bool playerReset;
+    public bool playerHitGeneratePlatform;
 
     public void PlayerStart() // method which operates when the game starts
     {
