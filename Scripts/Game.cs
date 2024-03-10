@@ -8,12 +8,14 @@ public class Game : MonoBehaviour
     Mover player;
 
     [SerializeField]
-    Transform juhyunPlatform;
+    Transform[] platforms;
 
     [SerializeField]
     Transform currentPlatform;
 
     float generatePlatformBuffer = 5f;
+
+    int i = 0;
 
 
 
@@ -25,14 +27,27 @@ public class Game : MonoBehaviour
 
     }
 
-    void GeneratePlatform()
+    void GeneratePlatform(ref int i)
     {
         if (player.playerHitGeneratePlatform)
         {
-            Transform p = Instantiate(juhyunPlatform);
-            Vector3 distanceVector = new Vector3(0f, 0f, player.distanceFromEdge + player.transform.position.z + generatePlatformBuffer);
+            Transform p = Instantiate(platforms[i]);
+            Transform furtherstPlatform = currentPlatform.GetChild(0);
+            for(int x = 0; x < currentPlatform.childCount; x ++)
+            {
+                if(currentPlatform.GetChild(x).tag == "Platform")
+                {
+                    if(currentPlatform.GetChild(x).transform.position.z > furtherstPlatform.position.z)
+                    {
+                        furtherstPlatform = currentPlatform.GetChild(x);
+                    }
+                }
+            }
+            Vector3 distanceVector = new Vector3(0f, 0f, furtherstPlatform.position.z + furtherstPlatform.localScale.z/2 + generatePlatformBuffer);
             p.position += distanceVector;
             player.playerHitGeneratePlatform = false;
+            currentPlatform = p;
+            i++;
 
         }
 
@@ -48,7 +63,12 @@ public class Game : MonoBehaviour
             player.PlayerStart();
             player.playerReset = false;
         }
-        GeneratePlatform();
+        GeneratePlatform(ref i);
+        if (i > 1)
+        {
+            i = 0;
+        }
+
     }
     private void FixedUpdate()
     {

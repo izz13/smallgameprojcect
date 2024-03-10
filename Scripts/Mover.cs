@@ -104,7 +104,7 @@ public class Mover : MonoBehaviour
     bool CheckEdge()
     {
         Ray ray = new Ray(transform.position, transform.forward);
-        if (Physics.Raycast(ray, out RaycastHit hitInfo, 40f, mask))
+        if (Physics.Raycast(ray, out RaycastHit hitInfo, 50f, mask))
         {
             distanceFromEdge = hitInfo.point.z - transform.position.z;
             Destroy(hitInfo.collider.gameObject);
