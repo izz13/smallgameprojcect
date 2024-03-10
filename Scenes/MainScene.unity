@@ -376,7 +376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1083261505}
-  juhyunPlatform: {fileID: 6127520121524138406, guid: 90bb8555a31e04e98907c2e22475e3ba, type: 3}
+  juhyunPlatform: {fileID: 2039674165256324878, guid: 89f4c236da5bd4af48828b8457e15eac, type: 3}
   currentPlatform: {fileID: 2134755651}
 --- !u!4 &1611304795
 Transform:
