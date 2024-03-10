@@ -18,10 +18,15 @@ public class Mover : MonoBehaviour
     public bool playerReset;
     public bool playerHitGeneratePlatform;
 
+    LayerMask mask;
+
+    public float distanceFromEdge;
+
     public void PlayerStart() // method which operates when the game starts
     {
         transform.position = startPosition; // set the position as the start position which is (0,0,0)
         rb = GetComponent<Rigidbody>(); //set the main body object as the rigid body
+        mask = LayerMask.GetMask("GeneratePlatform");
     }
 
     public void PlayerUpdate() // method which update the movement based on the user's input
@@ -33,6 +38,7 @@ public class Mover : MonoBehaviour
         // Move(direction); // then call move function by giving direction as parameter (which makes movement to the object according to the value in the direction variable)
         desiredJump |= Input.GetButtonDown("Jump");
         offMap();
+        playerHitGeneratePlatform = CheckEdge();
     }
 
     void offMap()
@@ -95,22 +101,14 @@ public class Mover : MonoBehaviour
             }
         }
     }
-    bool CheckGround()
+    bool CheckEdge()
     {
-        GameObject target;
-        Ray ray = new Ray(this.transform.position, this.transform.up * -1);
-        if(Physics.Raycast(ray, out RaycastHit rayhit))
+        Ray ray = new Ray(transform.position, transform.forward);
+        if (Physics.Raycast(ray, out RaycastHit hitInfo, 50f, mask))
         {
-            target = rayhit.collider.gameObject;
-            float normalAlignment = Vector3.Dot(rayhit.normal, Vector3.up);
-            if (normalAlignment < 1.5f && normalAlignment > .95f)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            distanceFromEdge = hitInfo.point.z - transform.position.z;
+            Destroy(hitInfo.collider.gameObject);
+            return true;
         }
         else
         {

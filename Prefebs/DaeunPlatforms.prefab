@@ -707,7 +707,7 @@ Transform:
   m_GameObject: {fileID: 3004093180973470043}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 22.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2310,6 +2310,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 1588347323378422012, guid: fb148c121443b4fb687ee7f847373769, type: 3}
+      propertyPath: m_TagString
+      value: Platform
+      objectReference: {fileID: 0}
     - target: {fileID: 5551266149578913754, guid: fb148c121443b4fb687ee7f847373769, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2351,7 +2355,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8092183716679171260, guid: fb148c121443b4fb687ee7f847373769, type: 3}
+    - {fileID: 5435619699858801662, guid: fb148c121443b4fb687ee7f847373769, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb148c121443b4fb687ee7f847373769, type: 3}
@@ -2371,6 +2377,10 @@ PrefabInstance:
     - target: {fileID: 1588347323378422012, guid: fb148c121443b4fb687ee7f847373769, type: 3}
       propertyPath: m_Name
       value: Ground (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1588347323378422012, guid: fb148c121443b4fb687ee7f847373769, type: 3}
+      propertyPath: m_TagString
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 5551266149578913754, guid: fb148c121443b4fb687ee7f847373769, type: 3}
       propertyPath: m_LocalScale.z
@@ -2417,7 +2427,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8092183716679171260, guid: fb148c121443b4fb687ee7f847373769, type: 3}
+    - {fileID: 5435619699858801662, guid: fb148c121443b4fb687ee7f847373769, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb148c121443b4fb687ee7f847373769, type: 3}
@@ -2437,6 +2449,10 @@ PrefabInstance:
     - target: {fileID: 1588347323378422012, guid: fb148c121443b4fb687ee7f847373769, type: 3}
       propertyPath: m_Name
       value: Ground (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1588347323378422012, guid: fb148c121443b4fb687ee7f847373769, type: 3}
+      propertyPath: m_TagString
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 5551266149578913754, guid: fb148c121443b4fb687ee7f847373769, type: 3}
       propertyPath: m_LocalScale.z
@@ -2483,7 +2499,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8092183716679171260, guid: fb148c121443b4fb687ee7f847373769, type: 3}
+    - {fileID: 5435619699858801662, guid: fb148c121443b4fb687ee7f847373769, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb148c121443b4fb687ee7f847373769, type: 3}
@@ -2503,6 +2521,10 @@ PrefabInstance:
     - target: {fileID: 1588347323378422012, guid: fb148c121443b4fb687ee7f847373769, type: 3}
       propertyPath: m_Name
       value: Ground (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1588347323378422012, guid: fb148c121443b4fb687ee7f847373769, type: 3}
+      propertyPath: m_TagString
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 5551266149578913754, guid: fb148c121443b4fb687ee7f847373769, type: 3}
       propertyPath: m_LocalScale.z
@@ -2549,7 +2571,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8092183716679171260, guid: fb148c121443b4fb687ee7f847373769, type: 3}
+    - {fileID: 5435619699858801662, guid: fb148c121443b4fb687ee7f847373769, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb148c121443b4fb687ee7f847373769, type: 3}
@@ -2569,6 +2593,10 @@ PrefabInstance:
     - target: {fileID: 1588347323378422012, guid: fb148c121443b4fb687ee7f847373769, type: 3}
       propertyPath: m_Name
       value: Ground (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1588347323378422012, guid: fb148c121443b4fb687ee7f847373769, type: 3}
+      propertyPath: m_TagString
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 5551266149578913754, guid: fb148c121443b4fb687ee7f847373769, type: 3}
       propertyPath: m_LocalScale.z
@@ -2615,7 +2643,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8092183716679171260, guid: fb148c121443b4fb687ee7f847373769, type: 3}
+    - {fileID: 5435619699858801662, guid: fb148c121443b4fb687ee7f847373769, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb148c121443b4fb687ee7f847373769, type: 3}
@@ -2635,6 +2665,10 @@ PrefabInstance:
     - target: {fileID: 1588347323378422012, guid: fb148c121443b4fb687ee7f847373769, type: 3}
       propertyPath: m_Name
       value: Ground (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1588347323378422012, guid: fb148c121443b4fb687ee7f847373769, type: 3}
+      propertyPath: m_TagString
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 5551266149578913754, guid: fb148c121443b4fb687ee7f847373769, type: 3}
       propertyPath: m_LocalScale.z
@@ -2681,7 +2715,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8092183716679171260, guid: fb148c121443b4fb687ee7f847373769, type: 3}
+    - {fileID: 5435619699858801662, guid: fb148c121443b4fb687ee7f847373769, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb148c121443b4fb687ee7f847373769, type: 3}
@@ -2701,6 +2737,10 @@ PrefabInstance:
     - target: {fileID: 1588347323378422012, guid: fb148c121443b4fb687ee7f847373769, type: 3}
       propertyPath: m_Name
       value: Ground (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1588347323378422012, guid: fb148c121443b4fb687ee7f847373769, type: 3}
+      propertyPath: m_TagString
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 5551266149578913754, guid: fb148c121443b4fb687ee7f847373769, type: 3}
       propertyPath: m_LocalScale.z
@@ -2747,7 +2787,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8092183716679171260, guid: fb148c121443b4fb687ee7f847373769, type: 3}
+    - {fileID: 5435619699858801662, guid: fb148c121443b4fb687ee7f847373769, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb148c121443b4fb687ee7f847373769, type: 3}
@@ -2767,6 +2809,10 @@ PrefabInstance:
     - target: {fileID: 1588347323378422012, guid: fb148c121443b4fb687ee7f847373769, type: 3}
       propertyPath: m_Name
       value: Ground (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1588347323378422012, guid: fb148c121443b4fb687ee7f847373769, type: 3}
+      propertyPath: m_TagString
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 5551266149578913754, guid: fb148c121443b4fb687ee7f847373769, type: 3}
       propertyPath: m_LocalScale.z
@@ -2813,7 +2859,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8092183716679171260, guid: fb148c121443b4fb687ee7f847373769, type: 3}
+    - {fileID: 5435619699858801662, guid: fb148c121443b4fb687ee7f847373769, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb148c121443b4fb687ee7f847373769, type: 3}
@@ -2833,6 +2881,10 @@ PrefabInstance:
     - target: {fileID: 1588347323378422012, guid: fb148c121443b4fb687ee7f847373769, type: 3}
       propertyPath: m_Name
       value: Ground (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1588347323378422012, guid: fb148c121443b4fb687ee7f847373769, type: 3}
+      propertyPath: m_TagString
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 5551266149578913754, guid: fb148c121443b4fb687ee7f847373769, type: 3}
       propertyPath: m_LocalScale.z
@@ -2878,8 +2930,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9187622453613775856, guid: fb148c121443b4fb687ee7f847373769, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5435619699858801662, guid: fb148c121443b4fb687ee7f847373769, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb148c121443b4fb687ee7f847373769, type: 3}
