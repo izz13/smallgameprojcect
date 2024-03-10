@@ -4,20 +4,28 @@ using UnityEngine;
 
 public class PlatformGenerator : MonoBehaviour
 {
-    Mover player;
-    public BoxCollider boxCollider;
+    public bool destroy = false;
 
-    private void OnTriggerEnter(Collider other)
+
+    private void Update()
     {
-        if (other.tag == "Player")
+        if (destroy)
         {
-            player = other.GetComponent<Mover>();
-            player.playerHitGeneratePlatform = true;
+            Destroy(this.gameObject);
         }
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawCube(boxCollider.center + transform.position, transform.localScale);
-    }
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    Debug.Log(other);
+    //    player = other.gameObject.GetComponent<Mover>();
+    //    if (player != null)
+    //    {
+    //        //Debug.Log("Hit Player");
+    //        player.playerHitGeneratePlatform = true;
+    //        Destroy(this.gameObject);
+
+    //    }
+
+    //}
 }
