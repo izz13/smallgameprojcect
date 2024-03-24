@@ -8,15 +8,18 @@ public class Game : MonoBehaviour
     Mover player;
 
     [SerializeField]
-    Transform[] platforms;
+    List<Transform> platforms;//a list to hold the platform prefabs(Juhyun Platforms and Daeun Platforms)
+    //Do you know the difference between a list and an array?
 
     [SerializeField]
-    Transform currentPlatform;
+    Transform currentPlatform;//this the current platform that the player is on
 
-    float generatePlatformBuffer = 5f;
+    float generatePlatformBuffer = 5f;//set a distance between the last platform in the currentPlatform transform and the first platform in the new generated platform
 
-    int i = 0;
+    int i = 0;//iterator value for each platform in platform list
 
+    //for i in range(5):
+    //for(int i = 0; i < 5; i++)
 
 
 
@@ -29,25 +32,27 @@ public class Game : MonoBehaviour
 
     void GeneratePlatform(ref int i)
     {
-        if (player.playerHitGeneratePlatform)
+        if (player.playerHitGeneratePlatform)//if player hit the generate platform trigger with it's ray is True
         {
-            Transform p = Instantiate(platforms[i]);
-            Transform furtherstPlatform = currentPlatform.GetChild(0);
-            for(int x = 0; x < currentPlatform.childCount; x ++)
+            Transform platform = platforms[i];
+            Debug.Log(platform.gameObject);
+            Transform p = Instantiate(platform);//create the platform in the game using the platfroms[i] platorm
+            Transform furtherstPlatform = currentPlatform.GetChild(0);//checking to see what is the last platform in the currentPlatform prefab
+            for(int x = 0; x < currentPlatform.childCount; x ++)//going through each platform in currentplatform
             {
                 if(currentPlatform.GetChild(x).tag == "Platform")
                 {
-                    if(currentPlatform.GetChild(x).transform.position.z > furtherstPlatform.position.z)
+                    if(currentPlatform.GetChild(x).transform.position.z > furtherstPlatform.position.z)//checking if the platforms[x] platform is further away than furthurstPlatform
                     {
-                        furtherstPlatform = currentPlatform.GetChild(x);
+                        furtherstPlatform = currentPlatform.GetChild(x);//make platforms[x] platform to be the new furthestPlatform
                     }
                 }
             }
-            Vector3 distanceVector = new Vector3(0f, 0f, furtherstPlatform.position.z + furtherstPlatform.localScale.z/2 + generatePlatformBuffer);
-            p.position += distanceVector;
-            player.playerHitGeneratePlatform = false;
-            currentPlatform = p;
-            i++;
+            Vector3 distanceVector = new Vector3(0f, 0f, furtherstPlatform.position.z + furtherstPlatform.localScale.z / 2 + generatePlatformBuffer);//creating a vector3 distance on where I want the new platform to be placed
+            p.position += distanceVector;//position of the new platform to be itself plus the distanceVector
+            player.playerHitGeneratePlatform = false;//generate platform to be false
+            currentPlatform = p;//set the new platform to be the current platform
+            i++;//increase the platform iterator
 
         }
 
@@ -62,12 +67,12 @@ public class Game : MonoBehaviour
         {
             player.PlayerStart();
             player.playerReset = false;
-        }
-        GeneratePlatform(ref i);
-        if (i > 1)
+        }       
+        if (i > platforms.Count - 1)//if the iterator is over the length of the list set it back to zero
         {
             i = 0;
         }
+        GeneratePlatform(ref i);
 
     }
     private void FixedUpdate()

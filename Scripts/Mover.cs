@@ -38,7 +38,7 @@ public class Mover : MonoBehaviour
         // Move(direction); // then call move function by giving direction as parameter (which makes movement to the object according to the value in the direction variable)
         desiredJump |= Input.GetButtonDown("Jump");
         offMap();
-        playerHitGeneratePlatform = CheckEdge();
+        playerHitGeneratePlatform = CheckEdge();//if the ray hit the generatePlatform trigger, then turn the playerHitGeneratePlatform to be True;
     }
 
     void offMap()
@@ -101,13 +101,14 @@ public class Mover : MonoBehaviour
             }
         }
     }
-    bool CheckEdge()
+    bool CheckEdge()//this function shoots a ray from the player's position with a direction of the player's forward vector and checks if it hits a platform generator
     {
-        Ray ray = new Ray(transform.position, transform.forward);
-        if (Physics.Raycast(ray, out RaycastHit hitInfo, 50f, mask))
+        //A ray is a "infinite" line that shoots out from a given position with a given direction
+        Ray ray = new Ray(transform.position, transform.forward);//shooting a ray from the player's position with a direction fo the player's forward vector
+        if (Physics.Raycast(ray, out RaycastHit hitInfo, 50f, mask))//Checking if the ray has hit a collider that has a mask GeneratePlatform
         {
-            distanceFromEdge = hitInfo.point.z - transform.position.z;
-            Destroy(hitInfo.collider.gameObject);
+            distanceFromEdge = hitInfo.point.z - transform.position.z;//getting the distance between the player and the collider that was hit
+            Destroy(hitInfo.collider.gameObject);//destroying the game object that the ray hit
             return true;
         }
         else

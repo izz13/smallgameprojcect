@@ -4,28 +4,15 @@ using UnityEngine;
 
 public class PlatformGenerator : MonoBehaviour
 {
-    public bool destroy = false;
+    public bool destroy = false;//boolean to see if the platformGenerator gameObject should be destroyed
 
 
     private void Update()
     {
-        if (destroy)
+        if (destroy)//checking if destroy is True every Frame
         {
-            Destroy(this.gameObject);
+            Destroy(this.gameObject);//This will destroy the gameObject that this script is attached to
         }
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    Debug.Log(other);
-    //    player = other.gameObject.GetComponent<Mover>();
-    //    if (player != null)
-    //    {
-    //        //Debug.Log("Hit Player");
-    //        player.playerHitGeneratePlatform = true;
-    //        Destroy(this.gameObject);
-
-    //    }
-
-    //}
 }
